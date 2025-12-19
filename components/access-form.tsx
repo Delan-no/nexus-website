@@ -10,23 +10,55 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { submitAccessRequest } from "@/app/actions"
 import { Loader2, CheckCircle } from "lucide-react"
+import { sendCandidatForm } from "@/lib/candidats";
 
 export function AccessForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  //gestion de message retourné par le back
+  const [message, setMessage] =useState<string>("");
 
   async function handleSubmit(formData: FormData) {
     setIsSubmitting(true)
     try {
-      await submitAccessRequest(formData)
-      setIsSubmitted(true)
+      // 2. Transformer les données du formulaire
+      const data = {
+        prenom: formData.get("firstName") as string,
+        nom: formData.get("lastName") as string,
+        email: formData.get("email") as string,
+        phone: formData.get("phone") as string,
+        activity: formData.get("activity") as string,
+        experience: formData.get("experience") as string,
+        capital: formData.get("capital") as string,
+        motivation: formData.get("motivation") as string,
+        referral: formData.get("referral") as string,
+        conditionAccepte: !!formData.get("terms"),
+        activateNotifs: !!formData.get("newsletter"),
+      };
+
+      
+        const response = await sendCandidatForm(data);
+    
+      if (typeof response === "string") {
+        setMessage(response);
+      } else if (response && typeof response === "object" && "message" in response) {
+        setMessage(response.message);
+      }
+      setIsSubmitted(true);
+      // Optionnel : afficher le message du back
+      // alert(typeof message === "string" ? message : message.message);
     } catch (error) {
-      console.error("Erreur lors de la soumission:", error)
+      console.error("Erreur lors de la soumission:", error);
+      setMessage("Une erreur est survenue lors de l'envoi deu formulaire");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
-
+function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const formData = new FormData(e.currentTarget);
+  handleSubmit(formData);
+}
   if (isSubmitted) {
     return (
       <section id="access" className="py-20">
@@ -35,9 +67,10 @@ export function AccessForm() {
             <Card className="border-green-200 bg-green-50 dark:bg-green-950 dark:border-green-800">
               <CardContent className="p-8">
                 <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-200 mb-4">
-                  Demande envoyée avec succès !
-                </h3>
+               {message && <h3 className="text-2xl font-bold text-green-800 dark:text-green-200 mb-4">
+                  {message}
+                  
+                </h3>}
                 <p className="text-green-700 dark:text-green-300">
                   Merci pour votre intérêt pour NEXUS. Notre équipe va examiner votre demande et vous contactera dans
                   les 48 heures.
@@ -70,7 +103,7 @@ export function AccessForm() {
               <CardTitle className="text-center">Formulaire de candidature</CardTitle>
             </CardHeader>
             <CardContent>
-              <form action={handleSubmit} className="space-y-6">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">Prénom *</Label>
@@ -99,6 +132,7 @@ export function AccessForm() {
                       <SelectValue placeholder="Sélectionnez votre activité" />
                     </SelectTrigger>
                     <SelectContent>
+                      <SelectItem value="porteur">Porteur de projet</SelectItem>
                       <SelectItem value="entrepreneur">Entrepreneur</SelectItem>
                       <SelectItem value="investisseur">Investisseur privé</SelectItem>
                       <SelectItem value="dirigeant">Dirigeant d'entreprise</SelectItem>
@@ -131,11 +165,11 @@ export function AccessForm() {
                       <SelectValue placeholder="Sélectionnez votre capital disponible" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="50k-100k">50 000€ - 100 000€</SelectItem>
-                      <SelectItem value="100k-250k">100 000€ - 250 000€</SelectItem>
-                      <SelectItem value="250k-500k">250 000€ - 500 000€</SelectItem>
-                      <SelectItem value="500k-1m">500 000€ - 1 000 000€</SelectItem>
-                      <SelectItem value="1m+">Plus de 1 000 000€</SelectItem>
+                      <SelectItem value="50k-100k">50 000 - 100 000</SelectItem>
+                      <SelectItem value="100k-250k">100 000 - 250 000</SelectItem>
+                      <SelectItem value="250k-500k">250 000 - 500 000</SelectItem>
+                      <SelectItem value="500k-1m">500 000 - 1 000 000</SelectItem>
+                      <SelectItem value="1m+">Plus de 1 000 000</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

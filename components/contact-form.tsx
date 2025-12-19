@@ -8,22 +8,59 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { submitContactMessage } from "@/app/actions"
 import { Loader2, CheckCircle, Mail, Phone, MapPin } from "lucide-react"
+import{ sendContactForm } from "@/lib/contact"
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  //message de retour du back
+  const [errors, setMessage] = useState<string | null>(null);
+  
 
   async function handleSubmit(formData: FormData) {
+    
     setIsSubmitting(true)
     try {
-      await submitContactMessage(formData)
-      setIsSubmitted(true)
+      const data ={
+        nom: formData.get("nom") as string,
+        email: formData.get("email") as string,
+        phone:  formData.get("phone") as string,
+        subject: formData.get("subject") as string,
+        message:formData.get("message") as string,
+
+      };
+      console.log("data",data)
+      const response = await sendContactForm(data);
+      console.log("reponse ==> ",response)
+
+   if (typeof response === "string") {
+  setMessage(response);
+} else if (response && typeof response === "object") {
+  if (Array.isArray(response.errors) && response.errors.length > 0) {
+    setMessage(response.errors.join("\n"));
+  } else if (response.message) {
+    setMessage(response.message);
+  }
+}
+      
+      setIsSubmitted(true);
+      
+      // await submitContactMessage(formData)
+    
     } catch (error) {
       console.error("Erreur lors de la soumission:", error)
     } finally {
       setIsSubmitting(false)
     }
   }
+  
+  
+function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const formData = new FormData(e.currentTarget);
+  handleSubmit(formData);
+}
+
 
   if (isSubmitted) {
     return (
@@ -33,9 +70,9 @@ export function ContactForm() {
             <Card className="border-green-200 bg-green-50 dark:bg-green-950 dark:border-green-800">
               <CardContent className="p-8">
                 <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-200 mb-4">
-                  Message envoyé avec succès !
-                </h3>
+                {errors && <h3 className="text-2xl font-bold text-green-800 dark:text-green-200 mb-4">
+                  {errors}
+                </h3>}
                 <p className="text-green-700 dark:text-green-300">
                   Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais.
                 </p>
@@ -53,7 +90,7 @@ export function ContactForm() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Contactez{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">NEXUS</span>
+            <span className="bg-gradient-to-r text-blue-900  bg-clip-text ">NEXUS</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Une question ? Un projet d'investissement ? Notre équipe d'experts est là pour vous accompagner.
@@ -135,11 +172,11 @@ export function ContactForm() {
                 <CardTitle>Envoyez-nous un message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form action={handleSubmit} className="space-y-6">
+                <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="contactName">Nom complet *</Label>
-                      <Input id="contactName" name="name" required placeholder="Votre nom complet" />
+                      <Input id="contactName" name="nom" required placeholder="Votre nom complet" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="contactEmail">Email *</Label>

@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { getContactMessages } from "@/app/actions"
-import { AdminNavbar } from "@/components/admin-navbar"
 import { MessageSquare, Mail, Phone, Calendar, Clock } from "lucide-react"
 
 export default async function AdminMessages() {
@@ -9,8 +8,6 @@ export default async function AdminMessages() {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <AdminNavbar />
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">

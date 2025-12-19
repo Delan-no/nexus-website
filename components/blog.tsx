@@ -1,70 +1,65 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Calendar, Clock, ArrowRight } from "lucide-react"
+'use client';
+
+import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { getBlogs } from "@/lib/blog";
+import { BlogDetailsModal } from "./blog-details-modal";
+
+type Blog = {
+  _id: string;
+  titre: string;
+  description: string;
+  badge: string;
+  contenu: string;
+  image?: string;
+  date: string;
+  auteur?: string;
+};
 
 export function Blog() {
-  const articles = [
-    {
-      title: "Les 10 startups à surveiller en 2024",
-      excerpt:
-        "Découvrez notre sélection des startups les plus prometteuses dans les secteurs de l'IA, la fintech et la greentech.",
-      category: "Startups",
-      date: "15 Jan 2024",
-      readTime: "5 min",
-      image: "/placeholder.svg?height=200&width=400",
-      featured: true,
-    },
-    {
-      title: "Stratégies d'investissement en période d'incertitude",
-      excerpt: "Comment adapter son portefeuille face aux turbulences économiques et maximiser ses rendements.",
-      category: "Stratégie",
-      date: "12 Jan 2024",
-      readTime: "8 min",
-      image: "/placeholder.svg?height=200&width=400",
-      featured: false,
-    },
-    {
-      title: "L'IA révolutionne l'analyse financière",
-      excerpt:
-        "Comment l'intelligence artificielle transforme notre approche de l'investissement et de l'analyse des marchés.",
-      category: "Tech",
-      date: "10 Jan 2024",
-      readTime: "6 min",
-      image: "/placeholder.svg?height=200&width=400",
-      featured: false,
-    },
-    {
-      title: "Guide complet : Investir dans les crypto-actifs",
-      excerpt: "Tout ce qu'il faut savoir pour investir intelligemment dans les cryptomonnaies et la DeFi.",
-      category: "Crypto",
-      date: "8 Jan 2024",
-      readTime: "12 min",
-      image: "/placeholder.svg?height=200&width=400",
-      featured: false,
-    },
-    {
-      title: "ESG : L'investissement responsable en 2024",
-      excerpt: "Pourquoi les critères environnementaux, sociaux et de gouvernance sont devenus incontournables.",
-      category: "ESG",
-      date: "5 Jan 2024",
-      readTime: "7 min",
-      image: "/placeholder.svg?height=200&width=400",
-      featured: false,
-    },
-    {
-      title: "Analyse : Le marché des IPO en 2024",
-      excerpt: "Notre analyse des introductions en bourse les plus attendues et des opportunités à saisir.",
-      category: "Bourse",
-      date: "3 Jan 2024",
-      readTime: "10 min",
-      image: "/placeholder.svg?height=200&width=400",
-      featured: false,
-    },
-  ]
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const featuredArticle = articles.find((article) => article.featured)
-  const regularArticles = articles.filter((article) => !article.featured)
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getBlogs();
+          console.log("Blogs reçus :", data);
+          if (data && Array.isArray(data)) {
+            setBlogs(data);
+          }
+           setLoading(false);
+        };
+    fetchData();
+  }, []);
+
+  const handleReadArticle = (blog: Blog) => {
+    setSelectedBlog(blog);
+    setModalOpen(true);
+  };
+
+if (loading) {
+  return (
+    <section className="py-20 text-center">
+      <p className="text-lg text-gray-500">Chargement des articles...</p>
+    </section>
+  );
+}
+
+if (!blogs.length) {
+  return (
+    <section className="py-20 text-center">
+      <p className="text-lg text-gray-500">Aucun article disponible pour le moment.</p>
+    </section>
+  );
+}
+
+  const featuredArticle = blogs[0];
+  const regularArticles = blogs.slice(1);
 
   return (
     <section id="blog" className="py-20">
@@ -72,7 +67,10 @@ export function Blog() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Blog{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">NEXUS</span>
+            <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
+              
+              
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Restez informé des dernières tendances, analyses et opportunités d'investissement grâce à nos experts et
@@ -80,39 +78,46 @@ export function Blog() {
           </p>
         </div>
 
-        {/* Article en vedette */}
+        {/* Article vedette */}
         {featuredArticle && (
           <div className="mb-16">
             <Card className="overflow-hidden border-border/50 hover:border-purple-600/30 transition-all duration-300">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="aspect-video lg:aspect-auto">
-                  <img
-                    src={featuredArticle.image || "/placeholder.svg"}
-                    alt={featuredArticle.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="aspect-video lg:aspect-auto">
+  <img
+    src={featuredArticle.image || "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"}
+    alt={featuredArticle.titre}
+    className="w-full h-full object-cover"
+    onError={(e) => {
+      e.currentTarget.src = "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    }}
+  />
+</div>
+
                 <CardContent className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
                     <Badge className="bg-gradient-to-r from-purple-600 to-violet-600 text-white">Article vedette</Badge>
-                    <Badge variant="secondary">{featuredArticle.category}</Badge>
+                    <Badge variant="secondary">{featuredArticle.badge}</Badge>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 hover:text-purple-600 transition-colors">
-                    {featuredArticle.title}
+                    {featuredArticle.titre}
                   </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{featuredArticle.excerpt}</p>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {featuredArticle.description}
+                  </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
-                        {featuredArticle.date}
+                        {new Date(featuredArticle.date).toLocaleDateString()}
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {featuredArticle.readTime}
-                      </div>
+                      {/* si tu veux le readTime, ajoute-le dans ton modèle */}
                     </div>
-                    <Button variant="ghost" className="text-purple-600 hover:text-purple-700">
+                    <Button 
+                      variant="ghost" 
+                      className="text-purple-600 hover:text-purple-700"
+                      onClick={() => handleReadArticle(featuredArticle)}
+                    >
                       Lire l'article
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -125,39 +130,46 @@ export function Blog() {
 
         {/* Grille d'articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {regularArticles.map((article, index) => (
+          {regularArticles.map((article) => (
             <Card
-              key={index}
+              key={article._id}
               className="group overflow-hidden border-border/50 hover:border-purple-600/30 transition-all duration-300 hover:shadow-lg"
             >
               <div className="aspect-video overflow-hidden">
                 <img
                   src={article.image || "/placeholder.svg"}
-                  alt={article.title}
+                  alt={article.titre}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <Badge variant="secondary" className="text-xs">
-                    {article.category}
+                    {article.badge}
                   </Badge>
                 </div>
                 <h3 className="text-lg font-semibold mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
-                  {article.title}
+                  {article.titre}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{article.excerpt}</p>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                  {article.description}
+                </p>
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
-                      {article.date}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {article.readTime}
+                      {new Date(article.date).toLocaleDateString()}
                     </div>
                   </div>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    className="text-purple-600 hover:text-purple-700 text-xs"
+                    onClick={() => handleReadArticle(article)}
+                  >
+                    Lire l'article
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -171,6 +183,13 @@ export function Blog() {
           </Button>
         </div>
       </div>
+
+      {/* Modale de détails de l'article */}
+      <BlogDetailsModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        blog={selectedBlog}
+      />
     </section>
-  )
+  );
 }

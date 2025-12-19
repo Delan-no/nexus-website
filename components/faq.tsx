@@ -1,48 +1,25 @@
+"use client"
+import { useEffect, useState } from "react"
+import axios from "axios"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export function FAQ() {
-  const faqs = [
-    {
-      question: "Comment puis-je rejoindre NEXUS ?",
-      answer:
-        "Pour rejoindre NEXUS, vous devez remplir notre formulaire de demande d'accès. Notre équipe évaluera votre profil et votre expérience en investissement. Nous privilégions les investisseurs expérimentés avec un capital minimum de 100 000 FCFA et une vision à long terme.",
-    },
-    {
-      question: "Quel est le montant minimum d'investissement ?",
-      answer:
-        "Le montant minimum d'investissement varie selon les opportunités. Pour les startups, il est généralement de 100 000 FCFA, pour les investissements en bourse de 1 000 000 FCFA, et pour les acquisitions d'entreprises de 50 000 000 FCFA. Cependant, nous recommandons un capital disponible d'au moins 10 000 000 FCFA pour diversifier efficacement.",
-    },
-    {
-      question: "Quels sont les frais de membership ?",
-      answer:
-        "NEXUS fonctionne sur un modèle de cotisation annuelle de 1 500 000 FCFA plus une commission de performance de 20% sur les gains réalisés. Cette structure aligne nos intérêts avec ceux de nos membres et garantit que nous ne gagnons que lorsque vous gagnez.",
-    },
-    {
-      question: "Comment sont sélectionnées les opportunités d'investissement ?",
-      answer:
-        "Nos opportunités sont rigoureusement sélectionnées par notre comité d'experts composé d'anciens dirigeants de fonds d'investissement, d'entrepreneurs à succès et d'analystes financiers. Nous utilisons également des outils d'IA propriétaires pour analyser les tendances du marché et identifier les secteurs porteurs.",
-    },
-    {
-      question: "Puis-je retirer mes investissements à tout moment ?",
-      answer:
-        "La liquidité dépend du type d'investissement. Les positions en bourse peuvent généralement être liquidées rapidement, tandis que les investissements dans les startups ou les acquisitions d'entreprises ont des horizons plus longs (3-7 ans). Nous fournissons une estimation de liquidité pour chaque opportunité.",
-    },
-    {
-      question: "Quelle est la performance historique de NEXUS ?",
-      answer:
-        "Sur les 5 dernières années, NEXUS a généré un rendement annuel moyen de 23% pour ses membres, surperformant les indices traditionnels. Cependant, les performances passées ne garantissent pas les résultats futurs, et tout investissement comporte des risques.",
-    },
-    {
-      question: "Comment puis-je suivre mes investissements ?",
-      answer:
-        "Tous les membres ont accès à notre plateforme propriétaire qui offre un suivi en temps réel de tous vos investissements, des analyses détaillées, des rapports de performance et des alertes personnalisées. Vous recevez également des rapports mensuels détaillés.",
-    },
-    {
-      question: "NEXUS propose-t-il des formations en investissement ?",
-      answer:
-        "Oui, nous organisons régulièrement des masterclasses, des webinaires et des événements exclusifs avec des experts reconnus. Nos membres bénéficient également d'un accès à notre bibliothèque de ressources éducatives et peuvent participer à des groupes de travail thématiques.",
-    },
-  ]
+  const [faqs, setFaqs] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/details") 
+      .then(res => {
+        if (res.data && res.data.success) {
+          setFaqs(res.data.data)
+        } else {
+          setError("Erreur lors du chargement des options.")
+        }
+      })
+      .catch(() => setError("Erreur lors du chargement des options."))
+      .finally(() => setLoading(false))
+  }, [])
 
   return (
     <section id="faq" className="py-20 bg-muted/30">
@@ -59,21 +36,36 @@ export function FAQ() {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-background border border-border/50 rounded-lg px-6 hover:border-purple-600/30 transition-colors"
-              >
-                <AccordionTrigger className="text-left hover:text-purple-600 transition-colors py-6">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="max-w-full mx-auto">
+          {loading ? (
+            <div className="text-center py-10 text-muted-foreground">Chargement...</div>
+          ) : error ? (
+            <div className="text-center py-10 text-red-500">{error}</div>
+          ) : (
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={faq._id || index}
+                  value={`item-${index}`}
+                  className="bg-background border border-border/50 rounded-lg px-6 hover:border-purple-600/30 transition-colors"
+                >
+                  <AccordionTrigger className="text-left hover:text-purple-600 transition-colors py-6">
+                    {faq.option}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                    {faq.image && (
+                      <img
+                        src={faq.image}
+                        alt={faq.option}
+                        className="mb-4 max-h-40 object-contain mx-auto rounded"
+                      />
+                    )}
+                    {faq.description}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          )}
         </div>
 
         <div className="mt-16 text-center">

@@ -5,15 +5,21 @@ import { BarChart3, Brain, Globe, Lock, Network, Star } from "lucide-react"
 export function Advantages() {
   const advantages = [
     {
+      icon: BarChart3,
+      title: "Vision Panafricaine",
+      description: "Faire de NEXUS le leader des investissements stratégiques en Afrique; catalyseur d'un écosystème économique souverain, innovant et connecté au monde.",
+      badge: "vision",
+    },
+    {
       icon: Network,
       title: "Réseau exclusif",
-      description: "Accédez à un réseau de plus de 500 investisseurs, entrepreneurs et experts financiers.",
+      description: "Accédez à un réseau des plus grands entrepreneurs et experts africains.",
       badge: "Exclusif",
     },
     {
       icon: Brain,
       title: "Intelligence collective",
-      description: "Bénéficiez de l'expertise partagée et des analyses approfondies de notre communauté.",
+      description: "Bénéficiez de l'expertise partagée et des analyses approfondies des experts de notre communauté.",
       badge: "Expert",
     },
     {
@@ -23,23 +29,19 @@ export function Advantages() {
       badge: "Privilégié",
     },
     {
-      icon: BarChart3,
-      title: "Outils d'analyse",
-      description: "Plateforme propriétaire avec outils d'analyse avancés et intelligence artificielle.",
-      badge: "Tech",
+      icon: Star,
+      title: "Performance supérieure",
+      description: "NEXUS transforme chaque investissement en un moteur de croissance et d'innovation pour l'Afrique francophone.",
+      badge: "Performance",
     },
+
     {
       icon: Globe,
       title: "Diversification globale",
       description: "Investissements diversifiés sur tous les continents et secteurs d'activité.",
       badge: "Global",
     },
-    {
-      icon: Star,
-      title: "Performance supérieure",
-      description: "Rendements moyens de 23% sur les 5 dernières années, surperformant le marché.",
-      badge: "Performance",
-    },
+    
   ]
 
   return (
@@ -48,7 +50,7 @@ export function Advantages() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Pourquoi rejoindre{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">NEXUS</span>{" "}
+            <span className="bg-gradient-to-r text-blue-900 bg-clip-text ">NEXUS</span>{" "}
             ?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -80,7 +82,7 @@ export function Advantages() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center hidden">
           <div className="bg-gradient-to-r from-purple-600/5 to-violet-600/5 rounded-2xl p-8 border border-purple-600/10">
             <h3 className="text-2xl font-bold mb-4">Rejoignez l'élite de l'investissement</h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">

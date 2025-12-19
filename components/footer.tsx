@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link
               href="/"
-              className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-amber-500 bg-clip-text text-transparent"
             >
               NEXUS
             </Link>
@@ -19,16 +19,16 @@ export function Footer() {
               l'investissement intelligent.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-purple-600 transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-blue-600 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-purple-600 transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-blue-600 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-purple-600 transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-blue-600 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-purple-600 transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-amber-600 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -46,11 +46,6 @@ export function Footer() {
               <li>
                 <Link href="#advantages" className="text-muted-foreground hover:text-foreground transition-colors">
                   Avantages
-                </Link>
-              </li>
-              <li>
-                <Link href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Témoignages
                 </Link>
               </li>
               <li>
@@ -84,11 +79,9 @@ export function Footer() {
               <li>
                 <span className="text-muted-foreground">Acquisitions</span>
               </li>
+          
               <li>
-                <span className="text-muted-foreground">Conseil Patrimonial</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground">Formation</span>
+                <span className="text-muted-foreground">Incubation</span>
               </li>
               <li>
                 <span className="text-muted-foreground">Réseau Exclusif</span>
@@ -101,15 +94,15 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-purple-600" />
+                <Mail className="h-4 w-4 mr-2 text-blue-600" />
                 <span className="text-muted-foreground">contact@nexus-invest.com</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-purple-600" />
+                <Phone className="h-4 w-4 mr-2 text-blue-600" />
                 <span className="text-muted-foreground">+229 01 01 01 01 01</span>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 text-purple-600 mt-0.5" />
+                <MapPin className="h-4 w-4 mr-2 text-amber-600 mt-0.5" />
                 <span className="text-muted-foreground">
                   Cotonou/Bénin /
                   <br />

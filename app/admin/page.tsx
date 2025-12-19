@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getAccessRequests, getContactMessages } from "@/app/actions"
 import { Users, MessageSquare, TrendingUp, Calendar } from "lucide-react"
-import { AdminNavbar } from "@/components/admin-navbar"
 
 export default async function AdminDashboard() {
   const accessRequests = await getAccessRequests()
@@ -47,7 +46,6 @@ export default async function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <AdminNavbar />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">

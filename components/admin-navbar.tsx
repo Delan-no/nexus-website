@@ -34,7 +34,7 @@ export function AdminNavbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
             <Link
-              href="/admin"
+              href="/"
               className="text-xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent"
             >
               NEXUS Admin
