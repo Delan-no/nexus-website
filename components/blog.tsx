@@ -27,13 +27,19 @@ export function Blog() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getBlogs();
-          console.log("Blogs reçus :", data);
-          if (data && Array.isArray(data)) {
-            setBlogs(data);
-          }
-           setLoading(false);
-        };
+      try {
+        const data = await getBlogs();
+        console.log("Blogs reçus :", data);
+        if (data && Array.isArray(data)) {
+          setBlogs(data);
+        }
+      } catch (error) {
+        console.error("Erreur lors du chargement des blogs:", error);
+        setBlogs([]);
+      } finally {
+        setLoading(false);
+      }
+    };
     fetchData();
   }, []);
 

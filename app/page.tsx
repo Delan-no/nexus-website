@@ -2,7 +2,7 @@ import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { Advantages } from "@/components/advantages"
 // import { Testimonials } from "@/components/testimonials"
-import { Blog } from "@/components/blog"
+// import { Blog } from "@/components/blog"
 import { FAQ } from "@/components/faq"
 import { AccessForm } from "@/components/access-form"
 import { ContactForm } from "@/components/contact-form"
@@ -18,7 +18,7 @@ export default function HomePage() {
         <About />
         <Advantages />
         {/* <Testimonials /> */}
-        <Blog />
+        {/* <Blog /> */}
         <FAQ />
         <AccessForm />
         <ContactForm />
