@@ -17,29 +17,41 @@ export function About() {
       <div className="nexus-page-transition-top" />
       <div className=" px-4 sm:px-6 lg:px-8">
         <FounderMessage />
-        
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+
+        <div className="container mx-auto text-md md:text-lg mb-16">
+          <h2 className="text-xl text-center md:text-4xl font-bold mb-4">
             À propos de{" "}
             <span className="bg-gradient-to-r from-blue-900 to-blue-400 bg-clip-text text-transparent">NEXUS</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Nexus Capital est une société panafricaine d’investissement et de capital-développement dont l’ambition est de faire de l’Afrique une puissance financière autonome, en mobilisant les capitaux locaux, la diaspora et les partenaires internationaux autour de projets durables et stratégiques à fort impact.
-          Elle se positionne comme la première plateforme francophone de gestion d’actifs, de capital-investissement et de conseil stratégique dédiée à l’essor des économies africaines.
+          <p>
+            NeXus Capital Group est une société d’investissement panafricaine indépendante, conçue pour structurer, déployer et gérer du capital stratégique au service de la transformation économique de l’Afrique francophone et de l’espace UEMOA.
           </p>
+          <p>
+          Née de la conviction que l’Afrique ne manque ni de talents ni d’opportunités, mais d’infrastructures financières solides et d’exécution à grande échelle, NeXus Capital se positionne comme un acteur de nouvelle génération, à l’intersection du Private Equity, du Venture Capital, des marchés financiers et de la structuration de véhicules d’investissement.
+          </p>
+          <p>
+          Notre approche repose sur une vision long terme à l’horizon 2050, une discipline institutionnelle rigoureuse et une compréhension fine des réalités africaines, combinées aux standards internationaux de gouvernance, de gestion du risque et de performance.
+          </p>
+          <p>
+          Nous intervenons là où le capital est rare mais décisif : structuration de champions locaux, accompagnement de la croissance, consolidation sectorielle et allocation stratégique sur les marchés financiers.
+          </p>
+          <p>
+          NeXus Capital Group s’inscrit dans une ambition claire : bâtir une plateforme d’investissement de référence, capable de relier l’Afrique aux grands flux mondiaux de capitaux, tout en générant une valeur durable, mesurable et souveraine.
+          </p>
+          <span>Invest in Africa Dreams.</span>
         </div>
 
         <div className="grid container mx-auto grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h3 className="text-2xl font-bold mb-6">Notre Mission</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Nous croyons que l'investissement intelligent nécessite plus que du capital. Il faut de l'expertise, un
-              réseau solide et l'accès aux meilleures opportunités. NEXUS offre tout cela à ses membres dans un
-              environnement exclusif et collaboratif.
+              Notre mission est de structurer et d’investir des capitaux intelligents pour bâtir les champions économiques africains de demain.
+            </p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Nous intervenons à chaque étape de la chaîne de valeur — de l’idéation à la croissance, de la structuration à l’acquisition, du marché privé aux marchés financiers — avec une approche disciplinée, long terme et orientée performance.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Notre approche combine analyse rigoureuse, innovation technologique et intelligence collective pour
-              identifier et saisir les opportunités d'investissement les plus prometteuses.
+              Chez NeXus Capital, nous ne finançons pas uniquement des projets. Nous construisons des trajectoires de croissance, des institutions économiques et des héritages financiers.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6">

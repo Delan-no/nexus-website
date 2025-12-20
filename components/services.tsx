@@ -5,11 +5,11 @@ export function Services() {
     <div className="mb-16">
       <div className="text-center mb-12">
         <h3 className="text-3xl md:text-4xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-blue-900 to-amber-600 bg-clip-text text-transparent">Nos Services</span>
+          <span className="bg-gradient-to-r from-blue-900 to-amber-600 bg-clip-text text-transparent">Nos Domaines d’Intervention</span>
         </h3>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Découvrez l'étendue de nos services pour transformer vos ambitions en réalités
-        </p>
+        </p> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -24,7 +24,7 @@ export function Services() {
                 1. Investissement dans les startups
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Nous transformons vos idées audacieuses en entreprises prospères. NEXUS finance, accompagne et propulse les startups pour créer les licornes africaines de demain.
+                Nous transformons les idées audacieuses en entreprises prospères. Nous finançons, accompagnons et propulsons les startups africaines à fort potentiel pour créer les futures licornes du continent. Chaque investissement est sélectionné pour son impact économique et sa capacité à structurer des champions locaux.
               </p>
             </div>
           </div>
@@ -38,10 +38,10 @@ export function Services() {
             </div>
             <div className="flex-1">
               <h4 className="text-lg font-bold mb-2 text-blue-900 group-hover:text-blue-700 transition-colors">
-                2. Trading et investissement à la Bourse
+                2. Trading et investissements sur les marchés financiers
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Maximisez vos rendements tout en sécurisant vos capitaux. Nos experts accompagnent vos investissements sur les marchés africains et internationaux avec rigueur et stratégie.
+                Optimisez vos rendements tout en sécurisant votre capital. Nos experts gèrent vos investissements sur les marchés africains et internationaux avec rigueur, stratégie et vision long terme, créant un flux continu de valeur pour le fonds et ses investisseurs.
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export function Services() {
                 3. Acquisitions stratégiques
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Bâtir des entreprises solides et compétitives. Nous guidons les fusions, acquisitions et alliances pour renforcer les institutions africaines et créer un impact durable.
+              Bâtir des entreprises solides et compétitives. Nous guidons les fusions, acquisitions et alliances afin de consolider des acteurs clés, renforcer les institutions africaines et générer un impact durable à l’échelle sectorielle et continentale. 
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export function Services() {
                 4. Incubation et accompagnement opérationnel
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                De l'idée au marché, chaque projet bénéficie d'un mentorat stratégique, d'un développement opérationnel et d'un accès à un réseau international pour transformer vos rêves en succès concret.
+                De l’idée au marché, chaque projet bénéficie d’un accompagnement complet : structuration, mentorat stratégique, développement opérationnel et accès à un réseau international. Nous transformons vos rêves en entreprises concrètes, prêtes à attirer les capitaux et à croître durablement.
               </p>
             </div>
           </div>
@@ -92,7 +92,7 @@ export function Services() {
                 5. Réseau inclusif et partenariats stratégiques
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Connectez-vous avec des entrepreneurs, experts et investisseurs visionnaires. NEXUS favorise les coalitions et collaborations pour faire émerger un écosystème africain puissant et inclusif.
+              Connectez-vous aux entrepreneurs, investisseurs et experts visionnaires du continent et de la diaspora. Nous favorisons les collaborations, coalitions et synergies pour faire émerger un écosystème africain puissant, inclusif et structuré, où chaque partenaire contribue à la création de valeur.  
               </p>
             </div>
           </div>

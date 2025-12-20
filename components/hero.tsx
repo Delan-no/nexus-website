@@ -76,7 +76,7 @@ export function Hero() {
               },
               {
                 icon: Briefcase,
-                title: "NEXUS Club deal",
+                title: "NeXus Investor Hub",
                 description: "Club d'accès privilégié aux deals d'investissement ",
                 serviceType: "club-deal" as ServiceType,
               }
@@ -87,15 +87,15 @@ export function Hero() {
                 className="group relative text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-2xl transition-all duration-300"
               >
                 <div className="relative bg-white/70 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-4 md:p-6 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 hover:bg-blue-50/85 cursor-pointer">
-                  <div className="flex justify-center mb-5">
+                  <div className="flex justify-center mb-3">
                     <div className="p-3 bg-gradient-to-r from-blue-600 to-amber-500 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-300">
-                      <feature.icon className="h-6 w-6 md:h-6 md:w-6 text-white" />
+                      <feature.icon className="h-4 w-4 md:h-6 md:w-6 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-md md:text-lg font-bold mb-3 text-blue-900">
+                  <h3 className="text-md md:text-lg text-center font-bold mb-2 text-blue-900">
                     {feature.title}
                   </h3>
-                  <p className="text-blue-800/80 text-sm md:text-base leading-relaxed">
+                  <p className="text-blue-800/80 text-center text-sm md:text-base leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

@@ -77,10 +77,12 @@ export function BoardMembersDialog({ open, onOpenChange }: BoardMembersProps) {
                 </span>
               </DialogTitle>
               <DialogDescription className="text-base md:text-lg text-white/80 max-w-3xl">
-                Nos membres façonnent les deals les plus sélectifs entre Paris, Dubaï et San Francisco. Découvrez ceux
-                qui activent le dealflow, sécurisent les opérations et propulsent les sociétés du portefeuille.
+                Chez NeXus Capital, nous sommes convaincus que la performance durable d'une société d'investissement repose avant tout sur la qualité de sa gouvernance.
               </DialogDescription>
-              <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-white/70">
+              <DialogDescription className="text-base md:text-lg text-white/80 max-w-3xl">
+                Notre Board incarne cette exigence : il réunit des leaders expérimentés, des investisseurs chevronnés, des stratèges financiers et des experts panafricains engagés, partageant une même ambition — transformer le potentiel africain en valeur économique durable.
+              </DialogDescription>
+              {/* <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-white/70">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2">
                   <Crown className="h-4 w-4 text-[#f0c36a]" />
                   120+ ans d'expérience cumulée
@@ -93,7 +95,7 @@ export function BoardMembersDialog({ open, onOpenChange }: BoardMembersProps) {
                   <Users className="h-4 w-4 text-[#9bc0ff]" />
                   300+ LPs & Family Offices
                 </div>
-              </div>
+              </div> */}
             </DialogHeader>
 
             <div className="space-y-6">
@@ -153,6 +155,13 @@ export function BoardMembersDialog({ open, onOpenChange }: BoardMembersProps) {
                   </div>
                 </article>
               ))}
+
+              <DialogDescription className="text-base md:text-lg text-white/80 max-w-3xl">
+                NeXus Capital, c'est la rencontre entre vision africaine, exécution mondiale et gouvernance d'excellence.
+              </DialogDescription>
+              <DialogDescription className="text-base md:text-lg text-white/80 max-w-3xl">
+                Make Africa's Dreams Realities
+              </DialogDescription>
             </div>
           </div>
         </div>

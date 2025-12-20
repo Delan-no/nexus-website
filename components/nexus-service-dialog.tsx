@@ -40,15 +40,15 @@ const serviceContents = {
   },
   "club-deal": {
     icon: Briefcase,
-    title: "NeXus Club Deals",
-    subtitle: "Pour les investisseurs",
+    title: "NeXus Investor Hubs",
+    subtitle: "",
     content: [
-      "L'Afrique n'a pas besoin d'argent. Elle a besoin de capitaux stratégiquement mobilisés pour transformer son immense potentiel en un futur économique solide et durable. NeXus Club Deals s'inspire des plus grands clubs d'investissement mondiaux, tels que Leonis Investissement et BlackRock, pour offrir aux investisseurs une passerelle unique vers des projets à fort impact sur le continent.",
-      "Ce pôle n'est pas simplement un véhicule financier : c'est l'instrument par lequel les investisseurs construisent la vision NEXUS, en finançant les startups, entreprises et projets stratégiques qui façonneront l'Afrique de demain. Nous offrons une sélection rigoureuse des opportunités, une gestion professionnelle des risques et un accompagnement complet pour maximiser rendement et impact.",
-      "D'ici 2050, NeXus Club Deals sera le moteur financier de NEXUS Capital SAS, le futur BlackRock africain, leader incontesté de l'investissement et catalyseur du développement économique continental. Les capitaux investis ici ne servent pas seulement à générer des profits : ils servent à bâtir les institutions, les entreprises et les infrastructures qui feront de l'Afrique un acteur central de l'économie mondiale.",
-      "Investisseurs africains, diaspora, institutions financières internationales, européens, américains et visionnaires du monde entier : l'Afrique n'attend pas seulement vos fonds, elle attend votre engagement pour transformer son futur. Chez NEXUS, nous vous accueillons comme les architectes du continent de demain. Rejoignez NeXus Club Deals dès maintenant en envoyant votre dossier via notre formulaire de candidature et participez à la Révolution X."
+      "L’Afrique n’a pas besoin d’argent. Elle a besoin de capitaux stratégiquement mobilisés pour transformer son immense potentiel en un futur économique solide et durable. NeXus Investor Hub s’inspire des plus grands clubs d’investissement mondiaux, tels que Leonis Investissement et BlackRock, pour offrir aux investisseurs une passerelle unique vers des projets à fort impact sur le continent.",
+      "Ce Hub n’est pas simplement un véhicule financier : c’est l’instrument par lequel les investisseurs construisent la vision NEXUS, en finançant startups, entreprises et projets stratégiques qui façonneront l’Afrique de demain. Nous offrons une sélection rigoureuse des opportunités, une gestion professionnelle des risques et un accompagnement complet pour maximiser rendement et impact.",
+      "D’ici 2050, NeXus Investor Hub sera le moteur financier de NEXUS Capital, le futur BlackRock africain : leader incontesté de l’investissement et catalyseur du développement économique continental. Les capitaux investis ici ne servent pas seulement à générer des profits : ils bâtissent les institutions, les entreprises et les infrastructures qui feront de l’Afrique un acteur central de l’économie mondiale.",
+      "Investisseurs africains, diaspora, institutions financières internationales, européens, américains et visionnaires du monde entier : l’Afrique n’attend pas seulement vos fonds, elle attend votre engagement pour transformer son futur. Chez NEXUS, nous vous accueillons comme les architectes du continent de demain. Rejoignez NeXus Investor Hub dès maintenant en envoyant votre dossier via notre formulaire de candidature et participez à la Révolution X."
     ],
-    ctaText: "Rejoindre NeXus Club Deals"
+    ctaText: "Rejoindre NeXus Investor Hubs"
   }
 }
 
