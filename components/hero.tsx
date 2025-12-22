@@ -5,13 +5,9 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, TrendingUp, Users, Sparkles, Shield, Target, Rocket, Network, Briefcase } from "lucide-react"
 import Link from "next/link"
 import { BoardMembersDialog } from "@/components/board-members"
-import { NexusServiceDialog } from "@/components/nexus-service-dialog"
-
-type ServiceType = "combinator" | "connect" | "club-deal"
 
 export function Hero() {
   const [isBoardOpen, setIsBoardOpen] = useState(false)
-  const [openService, setOpenService] = useState<ServiceType | null>(null)
 
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden min-h-screen flex items-center nexus-animated-bg">
@@ -66,26 +62,26 @@ export function Hero() {
                 icon: Briefcase,
                 title: "NeXus Investor Hub",
                 description: "Club d'accès privilégié aux deals d'investissement ",
-                serviceType: "club-deal" as ServiceType,
+                serviceType: "club-deal",
               },
               {
                 icon: Rocket,
                 title: "NEXUS Combinator",
                 description: "Incubateur, mentorat personnalisé et financement pour les startups",
-                serviceType: "combinator" as ServiceType,
+                serviceType: "combinator",
               },
               {
                 icon: Network,
                 title: "NEXUS Connect",
                 description: "Communauté privée d'entrepreneurs africains à succès",
-                serviceType: "connect" as ServiceType,
+                serviceType: "connect",
               },
               
             ].map((feature, index) => (
-              <button
+              <Link
                 key={index}
-                onClick={() => setOpenService(feature.serviceType)}
-                className="group relative text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-2xl transition-all duration-300"
+                href={`/${feature.serviceType}`}
+                className="group relative text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-2xl transition-all duration-300 block"
               >
                 <div className="relative bg-white/70 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-4 md:p-6 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 hover:bg-blue-50/85 cursor-pointer">
                   <div className="flex justify-center mb-3">
@@ -100,7 +96,7 @@ export function Hero() {
                     {feature.description}
                   </p>
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -128,11 +124,6 @@ export function Hero() {
       <div className="nexus-page-transition" />
       
       <BoardMembersDialog open={isBoardOpen} onOpenChange={setIsBoardOpen} />
-      <NexusServiceDialog 
-        open={openService !== null} 
-        onOpenChange={(open) => !open && setOpenService(null)}
-        serviceType={openService}
-      />
     </section>
   )
 }
