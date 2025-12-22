@@ -34,31 +34,31 @@ export function FounderMessage() {
     }
   ]
 
-  const visibleParagraphs = showFull ? paragraphs : paragraphs.slice(0, 3)
+  const visibleParagraphs = showFull ? paragraphs : paragraphs.slice(0, 2)
 
   return (
     <div className="mb-16">
       <div className="bg-gradient-to-br from-white to-purple-50/30 rounded-2xl p-8 md:p-12 border border-purple-200/50 shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-12 items-start">
           {/* Photo du fondateur */}
-          <div className="relative w-full max-w-[300px] mx-auto md:mx-0">
-            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl border-4 border-purple-100">
+          <div className="relative w-full max-w-[300px]  mx-auto md:mx-0">
+            <div className="relative aspect-[3/4] rounded-full overflow-hidden shadow-xl border-4 border-purple-100">
               <Image
                 src="/images/founder.jpg"
                 alt="Fondateur de NEXUS"
                 fill
-                className="object-cover"
+                className="object-cover "
                 priority
                 sizes="(max-width: 768px) 100vw, 300px"
               />
             </div>
             <div className="mt-4 text-center md:text-left">
-              <h3 className="text-xl font-bold text-amber-400">Message du Fondateur</h3>
+              <h3 className="text-xl font-bold text-amber-400">Message from the Founder</h3>
             </div>
           </div>
 
           {/* Message du fondateur */}
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+          <div className="space-y-6 text-muted-foreground md:max-h-96 md:overflow-y-auto text-justify leading-relaxed">
             {visibleParagraphs.map((paragraph, index) => (
               <p 
                 key={index} 

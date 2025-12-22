@@ -12,9 +12,9 @@ export default function ClubDealPage() {
       <div className="nexus-3d-background" />
       <div className="nexus-particles" />
       
-      <div className="container mx-auto px-4 py-24 relative z-10">
+      <div className="container mx-auto px-4 py-5 relative z-10">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8">
           <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Retour à l'accueil
@@ -23,7 +23,7 @@ export default function ClubDealPage() {
           <div className="text-center">
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-gradient-to-r from-blue-600 to-amber-500 rounded-2xl shadow-lg">
-                <Briefcase className="h-12 w-12 text-white" />
+                <Briefcase className="h-10 w-10 text-white" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-blue-900 mb-6">
@@ -36,28 +36,9 @@ export default function ClubDealPage() {
         </div>
 
         {/* Content */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl text-justify mx-auto mb-16">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
             <h2 className="text-3xl font-bold text-blue-900 mb-8">Investissez comme un pro</h2>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center">
-                <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Deals Vérifiés</h3>
-                <p className="text-blue-800/80">Due diligence approfondie par nos experts</p>
-              </div>
-              <div className="text-center">
-                <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Rendements Élevés</h3>
-                <p className="text-blue-800/80">Objectif de 15-25% de retour annuel</p>
-              </div>
-              <div className="text-center">
-                <BarChart3 className="h-12 w-12 text-amber-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Portfolio Diversifié</h3>
-                <p className="text-blue-800/80">Accès à différents secteurs et stades</p>
-              </div>
-            </div>
-
             <div className="prose prose-lg max-w-none text-blue-900">
               <p className="text-lg leading-relaxed mb-6">
                 L'Afrique n'a pas besoin d'argent. Elle a besoin de capitaux stratégiquement mobilisés pour transformer son immense potentiel en un futur économique solide et durable. NeXus Investor Hub s'inspire des plus grands clubs d'investissement mondiaux, tels que Leonis Investissement et BlackRock, pour offrir aux investisseurs une passerelle unique vers des projets à fort impact sur le continent.
@@ -79,7 +60,7 @@ export default function ClubDealPage() {
               </p>
               
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mt-8">
-                <h4 className="text-xl font-bold text-amber-800 mb-2">⚡ Rejoignez la Révolution X</h4>
+                <h4 className="text-xl font-bold text-amber-800 mb-2"> Rejoignez la Révolution X</h4>
                 <p className="text-amber-700">
                   Participez à la transformation de l'Afrique en envoyant votre dossier via notre formulaire de candidature.
                 </p>
@@ -89,7 +70,7 @@ export default function ClubDealPage() {
         </div>
 
         {/* Formulaire */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
               Dossier de candidature

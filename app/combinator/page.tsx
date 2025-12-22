@@ -12,9 +12,9 @@ export default function CombinatorPage() {
       <div className="nexus-3d-background" />
       <div className="nexus-particles" />
       
-      <div className="container mx-auto px-4 py-24 relative z-10">
+      <div className="container mx-auto px-4 py-8 relative z-10">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-6">
           <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Retour à l'accueil
@@ -23,7 +23,7 @@ export default function CombinatorPage() {
           <div className="text-center">
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-gradient-to-r from-blue-600 to-amber-500 rounded-2xl shadow-lg">
-                <Rocket className="h-12 w-12 text-white" />
+                <Rocket className="h-10 w-10 text-white" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-blue-900 mb-6">
@@ -38,27 +38,7 @@ export default function CombinatorPage() {
         {/* Content */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
-            <h2 className="text-3xl font-bold text-blue-900 mb-8">Accélérez votre startup</h2>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center">
-                <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Mentorat Expert</h3>
-                <p className="text-blue-800/80">Accompagnement personnalisé par des entrepreneurs à succès</p>
-              </div>
-              <div className="text-center">
-                <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Réseau Premium</h3>
-                <p className="text-blue-800/80">Accès à notre écosystème d'investisseurs et partenaires</p>
-              </div>
-              <div className="text-center">
-                <Target className="h-12 w-12 text-amber-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Financement</h3>
-                <p className="text-blue-800/80">Jusqu'à 500K€ d'investissement initial</p>
-              </div>
-            </div>
-
-            <div className="prose prose-lg max-w-none text-blue-900">
+            <div className="prose prose-lg text-justify max-w-none text-blue-900">
               <p className="text-lg leading-relaxed mb-6">
                 L'Afrique a besoin de vos rêves. Chaque idée audacieuse, chaque projet innovant peut transformer le continent et impacter le monde. NeXus Combinator a été conçu pour créer les conditions optimales pour l'émergence et le succès des startups en Afrique francophone. Nous offrons un accompagnement complet : financement stratégique, mentorat opérationnel, développement commercial et accès à un réseau d'experts, investisseurs et partenaires internationaux.
               </p>
@@ -79,7 +59,7 @@ export default function CombinatorPage() {
               </p>
               
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mt-8">
-                <h4 className="text-xl font-bold text-amber-800 mb-2">⚡ Rejoignez la Révolution X</h4>
+                <h4 className="text-xl font-bold text-amber-800 mb-2">Rejoignez la Révolution X</h4>
                 <p className="text-amber-700">
                   Candidatez dès maintenant et offrez à votre rêve la chance de bâtir l'Afrique à l'ère de la Révolution X.
                 </p>
@@ -89,7 +69,7 @@ export default function CombinatorPage() {
         </div>
 
         {/* Formulaire */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
               Candidater au programme

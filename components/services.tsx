@@ -5,14 +5,14 @@ export function Services() {
     <div className="mb-16">
       <div className="text-center mb-12">
         <h3 className="text-3xl md:text-4xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-blue-900 to-amber-600 bg-clip-text text-transparent">Nos Domaines d’Intervention</span>
+          <span className="bg-gradient-to-r from-blue-900 to-amber-600 bg-clip-text text-transparent">Nos Domaines d'Intervention</span>
         </h3>
         {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Découvrez l'étendue de nos services pour transformer vos ambitions en réalités
         </p> */}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 text-justify md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Service 1: Investissement dans les startups */}
         <div className="group relative bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-6 border border-blue-200/50 hover:border-blue-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
           <div className="flex items-start gap-4">
@@ -58,7 +58,7 @@ export function Services() {
                 3. Acquisitions stratégiques
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-              Bâtir des entreprises solides et compétitives. Nous guidons les fusions, acquisitions et alliances afin de consolider des acteurs clés, renforcer les institutions africaines et générer un impact durable à l’échelle sectorielle et continentale. 
+              Bâtir des entreprises solides et compétitives. Nous guidons les fusions, acquisitions et alliances afin de consolider des acteurs clés, renforcer les institutions africaines et générer un impact durable à l'échelle sectorielle et continentale. 
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export function Services() {
                 4. Incubation et accompagnement opérationnel
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                De l’idée au marché, chaque projet bénéficie d’un accompagnement complet : structuration, mentorat stratégique, développement opérationnel et accès à un réseau international. Nous transformons vos rêves en entreprises concrètes, prêtes à attirer les capitaux et à croître durablement.
+                De l'idée au marché, chaque projet bénéficie d'un accompagnement complet : structuration, mentorat stratégique, développement opérationnel et accès à un réseau international. Nous transformons vos rêves en entreprises concrètes, prêtes à attirer les capitaux et à croître durablement.
               </p>
             </div>
           </div>

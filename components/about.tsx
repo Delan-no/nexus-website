@@ -18,37 +18,37 @@ export function About() {
       <div className=" px-4 sm:px-6 lg:px-8">
         <FounderMessage />
 
-        <div className="container mx-auto text-md md:text-lg mb-16">
+        <div className="container mx-auto text-justify text-md md:text-lg mb-16">
           <h2 className="text-xl text-center md:text-4xl font-bold mb-4">
             À propos de{" "}
             <span className="bg-gradient-to-r from-blue-900 to-blue-400 bg-clip-text text-transparent">NEXUS</span>
           </h2>
           <p>
-            NeXus Capital Group est une société d’investissement panafricaine indépendante, conçue pour structurer, déployer et gérer du capital stratégique au service de la transformation économique de l’Afrique francophone et de l’espace UEMOA.
+            NeXus Capital Group est une société d'investissement panafricaine indépendante, conçue pour structurer, déployer et gérer du capital stratégique au service de la transformation économique de l'Afrique francophone et de l'espace UEMOA.
           </p>
           <p>
-          Née de la conviction que l’Afrique ne manque ni de talents ni d’opportunités, mais d’infrastructures financières solides et d’exécution à grande échelle, NeXus Capital se positionne comme un acteur de nouvelle génération, à l’intersection du Private Equity, du Venture Capital, des marchés financiers et de la structuration de véhicules d’investissement.
+          Née de la conviction que l'Afrique ne manque ni de talents ni d'opportunités, mais d'infrastructures financières solides et d'exécution à grande échelle, NeXus Capital se positionne comme un acteur de nouvelle génération, à l'intersection du Private Equity, du Venture Capital, des marchés financiers et de la structuration de véhicules d'investissement.
           </p>
           <p>
-          Notre approche repose sur une vision long terme à l’horizon 2050, une discipline institutionnelle rigoureuse et une compréhension fine des réalités africaines, combinées aux standards internationaux de gouvernance, de gestion du risque et de performance.
+          Notre approche repose sur une vision long terme à l'horizon 2050, une discipline institutionnelle rigoureuse et une compréhension fine des réalités africaines, combinées aux standards internationaux de gouvernance, de gestion du risque et de performance.
           </p>
           <p>
           Nous intervenons là où le capital est rare mais décisif : structuration de champions locaux, accompagnement de la croissance, consolidation sectorielle et allocation stratégique sur les marchés financiers.
           </p>
           <p>
-          NeXus Capital Group s’inscrit dans une ambition claire : bâtir une plateforme d’investissement de référence, capable de relier l’Afrique aux grands flux mondiaux de capitaux, tout en générant une valeur durable, mesurable et souveraine.
+          NeXus Capital Group s'inscrit dans une ambition claire : bâtir une plateforme d'investissement de référence, capable de relier l'Afrique aux grands flux mondiaux de capitaux, tout en générant une valeur durable, mesurable et souveraine.
           </p>
           <span>Invest in Africa Dreams.</span>
         </div>
 
-        <div className="grid container mx-auto grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid container mx-auto grid-cols-1 lg:grid-cols-2 gap-12 text-justify items-center mb-16">
           <div>
             <h3 className="text-2xl font-bold mb-6">Notre Mission</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Notre mission est de structurer et d’investir des capitaux intelligents pour bâtir les champions économiques africains de demain.
+              Notre mission est de structurer et d'investir des capitaux intelligents pour bâtir les champions économiques africains de demain.
             </p>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Nous intervenons à chaque étape de la chaîne de valeur — de l’idéation à la croissance, de la structuration à l’acquisition, du marché privé aux marchés financiers — avec une approche disciplinée, long terme et orientée performance.
+              Nous intervenons à chaque étape de la chaîne de valeur, de l'idéation à la croissance, de la structuration à l'acquisition, du marché privé aux marchés financiers avec une approche disciplinée, long terme et orientée performance.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Chez NeXus Capital, nous ne finançons pas uniquement des projets. Nous construisons des trajectoires de croissance, des institutions économiques et des héritages financiers.
