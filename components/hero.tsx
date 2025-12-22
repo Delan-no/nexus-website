@@ -63,9 +63,15 @@ export function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mb-16">
             {[
               {
+                icon: Briefcase,
+                title: "NeXus Investor Hub",
+                description: "Club d'accès privilégié aux deals d'investissement ",
+                serviceType: "club-deal" as ServiceType,
+              },
+              {
                 icon: Rocket,
                 title: "NEXUS Combinator",
-                description: "Y Combinator incubateur, startup et financement",
+                description: "Incubateur, mentorat personnalisé et financement pour les startups",
                 serviceType: "combinator" as ServiceType,
               },
               {
@@ -74,12 +80,7 @@ export function Hero() {
                 description: "Communauté privée d'entrepreneurs africains à succès",
                 serviceType: "connect" as ServiceType,
               },
-              {
-                icon: Briefcase,
-                title: "NeXus Investor Hub",
-                description: "Club d'accès privilégié aux deals d'investissement ",
-                serviceType: "club-deal" as ServiceType,
-              }
+              
             ].map((feature, index) => (
               <button
                 key={index}

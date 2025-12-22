@@ -62,18 +62,19 @@ export function Advantages() {
           {advantages.map((advantage, index) => (
             <Card
               key={index}
-              className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-purple-600/30"
+              className="group hover:shadow-lg hover:scale-105 transition-all duration-300 border-border/50 hover:border-purple-600/30"
             >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 bg-gradient-to-r from-purple-600/10 to-violet-600/10 rounded-lg group-hover:from-purple-600/20 group-hover:to-violet-600/20 transition-colors">
-                    <advantage.icon className="h-6 w-6 text-purple-600" />
+                  {/* <div className="p-3 bg-gradient-to-r from-purple-600/10 to-violet-600/10 rounded-lg group-hover:from-purple-600/20 group-hover:to-violet-600/20 transition-colors"> */}
+                  <div className="bg-">
+                    <advantage.icon className="h-6 w-6 font-bold text-[#1D3F80]" />
                   </div>
-                  <Badge variant="secondary" className="bg-purple-600/10 text-purple-600 border-purple-600/20">
+                  <Badge variant="secondary" className="bg-white text-[#1D3F80] font-bold border-purple-600/20">
                     {advantage.badge}
                   </Badge>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-[#1D3F80] scale- transition-colors">
                   {advantage.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
