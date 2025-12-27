@@ -1,13 +1,10 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, TrendingUp, Users, Sparkles, Shield, Target, Rocket, Network, Briefcase } from "lucide-react"
 import Link from "next/link"
-import { BoardMembersDialog } from "@/components/board-members"
 
 export function Hero() {
-  const [isBoardOpen, setIsBoardOpen] = useState(false)
 
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden min-h-screen flex items-center nexus-animated-bg">
@@ -37,10 +34,12 @@ export function Hero() {
               size="lg"
               variant="outline"
               className="group text-base md:text-lg px-8 md:px-8 py-6 md:py-7 rounded-xl border-2 border-blue-600/30 text-blue-900 bg-blue-50/80 hover:bg-blue-100/90 backdrop-blur-sm transition-all duration-300 shadow-lg hover:shadow-xl"
-              onClick={() => setIsBoardOpen(true)}
+              asChild
             >
-              Découvrir notre Board
-              <Sparkles className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+              <Link href="/board">
+                Découvrir notre Board
+                <Sparkles className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+              </Link>
             </Button>
             <Button
               size="lg"
@@ -122,8 +121,6 @@ export function Hero() {
       
       {/* Animation de transition vers la section suivante */}
       <div className="nexus-page-transition" />
-      
-      <BoardMembersDialog open={isBoardOpen} onOpenChange={setIsBoardOpen} />
     </section>
   )
 }
