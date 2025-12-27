@@ -3,32 +3,32 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "luc
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="nexus-surface nexus-border-variant border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo et description */}
           <div className="space-y-4">
             <Link
               href="/"
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-amber-500 bg-clip-text text-transparent"
+              className="text-2xl font-bold nexus-gradient-text"
             >
               NEXUS
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="nexus-text-secondary text-sm leading-relaxed">
               La communauté exclusive d'investisseurs qui transforme l'avenir financier. Rejoignez l'élite de
               l'investissement intelligent.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-blue-600 transition-colors">
+              <a href="#" className="nexus-text-secondary hover:text-[hsl(var(--nexus-primary))] transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-blue-600 transition-colors">
+              <a href="#" className="nexus-text-secondary hover:text-[hsl(var(--nexus-primary))] transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-blue-600 transition-colors">
+              <a href="#" className="nexus-text-secondary hover:text-[hsl(var(--nexus-primary))] transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-amber-600 transition-colors">
+              <a href="#" className="nexus-text-secondary hover:text-[hsl(var(--nexus-secondary))] transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -36,30 +36,30 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-semibold mb-4">Navigation</h3>
+            <h3 className="font-semibold mb-4 nexus-text">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#about" className="nexus-text-secondary hover:nexus-text transition-colors">
                   À propos
                 </Link>
               </li>
               <li>
-                <Link href="#advantages" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#advantages" className="nexus-text-secondary hover:nexus-text transition-colors">
                   Avantages
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#blog" className="nexus-text-secondary hover:nexus-text transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#faq" className="nexus-text-secondary hover:nexus-text transition-colors">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#contact" className="nexus-text-secondary hover:nexus-text transition-colors">
                   Contact
                 </Link>
               </li>
@@ -68,42 +68,41 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="font-semibold mb-4 nexus-text">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <span className="text-muted-foreground">Investissement Startups</span>
+                <span className="nexus-text-secondary">Investissement Startups</span>
               </li>
               <li>
-                <span className="text-muted-foreground">Trading Bourse</span>
+                <span className="nexus-text-secondary">Trading Bourse</span>
               </li>
               <li>
-                <span className="text-muted-foreground">Acquisitions</span>
-              </li>
-          
-              <li>
-                <span className="text-muted-foreground">Incubation</span>
+                <span className="nexus-text-secondary">Acquisitions</span>
               </li>
               <li>
-                <span className="text-muted-foreground">Réseau Exclusif</span>
+                <span className="nexus-text-secondary">Incubation</span>
+              </li>
+              <li>
+                <span className="nexus-text-secondary">Réseau Exclusif</span>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <h3 className="font-semibold mb-4 nexus-text">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-blue-600" />
-                <span className="text-muted-foreground">contact@nexus-invest.com</span>
+                <Mail className="h-4 w-4 mr-2 text-[hsl(var(--nexus-primary))]" />
+                <span className="nexus-text-secondary">contact@nexus-invest.com</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-blue-600" />
-                <span className="text-muted-foreground">+229 01 01 01 01 01</span>
+                <Phone className="h-4 w-4 mr-2 text-[hsl(var(--nexus-primary))]" />
+                <span className="nexus-text-secondary">+229 01 01 01 01 01</span>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 text-amber-600 mt-0.5" />
-                <span className="text-muted-foreground">
+                <MapPin className="h-4 w-4 mr-2 text-[hsl(var(--nexus-secondary))] mt-0.5" />
+                <span className="nexus-text-secondary">
                   Cotonou/Bénin /
                   <br />
                   229 Cotonou, Bénin
@@ -113,17 +112,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8">
+        <div className="nexus-border-variant border-t mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} NEXUS. Tous droits réservés.</p>
+            <p className="nexus-text-secondary text-sm">© {new Date().getFullYear()} NEXUS. Tous droits réservés.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="#" className="nexus-text-secondary hover:nexus-text text-sm transition-colors">
                 Mentions légales
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="#" className="nexus-text-secondary hover:nexus-text text-sm transition-colors">
                 Politique de confidentialité
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <Link href="#" className="nexus-text-secondary hover:nexus-text text-sm transition-colors">
                 CGU
               </Link>
             </div>

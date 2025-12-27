@@ -45,20 +45,20 @@ const boardMembers = [
 
 export default function BoardPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-amber-50">
+    <div className="min-h-screen nexus-bg">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-blue-200/50 sticky top-0 z-10">
+      <div className="nexus-surface/80 backdrop-blur-sm nexus-border-variant border-b sticky top-0 z-10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/" className="flex items-center gap-2 text-blue-700 hover:text-blue-900">
+              <Link href="/" className="flex items-center gap-2 nexus-text-secondary hover:nexus-text">
                 <ArrowLeft className="h-4 w-4" />
                 Retour
               </Link>
             </Button>
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-blue-900">Notre Board</h1>
-              <p className="text-blue-700/80">L'équipe dirigeante de NEXUS</p>
+              <h1 className="text-2xl md:text-3xl font-bold nexus-text">Notre Board</h1>
+              <p className="nexus-text-secondary">L'équipe dirigeante de NEXUS</p>
             </div>
           </div>
         </div>
@@ -67,10 +67,10 @@ export default function BoardPage() {
       {/* Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold nexus-text mb-4">
             Une équipe d'exception
           </h2>
-          <p className="text-lg text-blue-800/90 max-w-3xl mx-auto">
+          <p className="text-lg nexus-text-secondary max-w-3xl mx-auto">
             Notre board réunit des experts reconnus dans l'investissement, la technologie et le développement des marchés africains.
           </p>
         </div>
@@ -80,38 +80,38 @@ export default function BoardPage() {
           {boardMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white/70 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="nexus-card-hover p-6 transform hover:-translate-y-1"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-600 to-amber-500 p-1 mb-4">
-                  <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-blue-900">
+                <div className="w-32 h-32 rounded-full nexus-gradient p-1 mb-4">
+                  <div className="w-full h-full rounded-full nexus-surface-variant flex items-center justify-center">
+                    <span className="text-2xl font-bold nexus-text">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-blue-900 mb-1">
+                <h3 className="text-xl font-bold nexus-text mb-1">
                   {member.name}
                 </h3>
                 
-                <p className="text-amber-600 font-semibold mb-4">
+                <p className="nexus-gradient-text font-semibold mb-4">
                   {member.role}
                 </p>
                 
-                <p className="text-blue-800/80 text-sm leading-relaxed mb-6">
+                <p className="nexus-text-secondary text-sm leading-relaxed mb-6">
                   {member.bio}
                 </p>
                 
                 <div className="flex gap-3">
                   <Button variant="ghost" size="sm" className="p-2 h-auto">
-                    <Linkedin className="h-4 w-4 text-blue-600" />
+                    <Linkedin className="h-4 w-4 text-[hsl(var(--nexus-primary))]" />
                   </Button>
                   <Button variant="ghost" size="sm" className="p-2 h-auto">
-                    <Twitter className="h-4 w-4 text-blue-600" />
+                    <Twitter className="h-4 w-4 text-[hsl(var(--nexus-primary))]" />
                   </Button>
                   <Button variant="ghost" size="sm" className="p-2 h-auto">
-                    <Mail className="h-4 w-4 text-blue-600" />
+                    <Mail className="h-4 w-4 text-[hsl(var(--nexus-primary))]" />
                   </Button>
                 </div>
               </div>
@@ -121,16 +121,16 @@ export default function BoardPage() {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-white/70 backdrop-blur-sm border border-blue-200/50 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4">
+          <div className="nexus-card p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold nexus-text mb-4">
               Rejoignez notre réseau
             </h3>
-            <p className="text-blue-800/80 mb-6">
+            <p className="nexus-text-secondary mb-6">
               Découvrez comment notre équipe peut vous accompagner dans vos projets d'investissement.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-amber-600 hover:from-blue-700 hover:to-amber-700 text-white"
+              className="nexus-gradient text-white"
               asChild
             >
               <Link href="#access">

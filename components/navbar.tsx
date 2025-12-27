@@ -16,22 +16,16 @@ export function Navbar() {
   const navItems = [
     { href: "#about", label: "À propos" },
     { href: "#advantages", label: "Avantages" },
-    // { href: "#testimonials", label: "Témoignages" },
     { href: "#blog", label: "Blog" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 w-full z-50 nexus-surface/80 backdrop-blur-md nexus-border-variant border-b">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link
-            href="/"
-            
-          >
-            {/* NEXUS */}
-
+          <Link href="/">
             <img src="/Logo0_Plan-removebg-preview.png" alt="Nexus Logo" className="w-32 h-auto" />
           </Link>
 
@@ -41,7 +35,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-foreground/80 hover:text-foreground transition-colors"
+                className="nexus-text-secondary hover:nexus-text transition-colors"
               >
                 {item.label}
               </Link>
@@ -57,19 +51,19 @@ export function Navbar() {
             {!loading && (
               user ? (
                 <>
-                  <Button asChild variant="outline">
+                  <Button asChild variant="outline" className="nexus-btn-secondary">
                     <Link href="/admin" className="flex items-center space-x-2">
                       <User className="h-4 w-4" />
                       <span>{user.firstName}</span>
                     </Link>
                   </Button>
-                  <Button onClick={logout} variant="outline">
+                  <Button onClick={logout} variant="outline" className="nexus-btn-secondary">
                     <LogOut className="h-4 w-4" />
                     <span>Déconnexion</span>
                   </Button>
                 </>
               ) : (
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="nexus-btn-secondary">
                   <Link href="/auth/login" className="flex items-center space-x-2">
                     <LogIn className="h-4 w-4" />
                     <span>Connexion</span>
@@ -78,7 +72,7 @@ export function Navbar() {
               )
             )}
 
-            <Button asChild className="bg-gradient-to-r from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600">
+            <Button asChild className="nexus-gradient text-white">
               <Link href="#access">Demander un accès</Link>
             </Button>
           </div>
@@ -94,7 +88,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       <div className={clsx(
-        "fixed top-0 right-0 h-full w-[80%] bg-background shadow-lg z-50 transform transition-transform duration-300 ease-in-out",
+        "fixed top-0 right-0 h-full w-[80%] nexus-surface shadow-lg z-50 transform transition-transform duration-300 ease-in-out",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="flex justify-end p-4">
@@ -108,7 +102,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-foreground/80 hover:text-foreground transition-colors"
+              className="nexus-text-secondary hover:nexus-text transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {item.label}
@@ -119,13 +113,13 @@ export function Navbar() {
             {!loading && (
               user ? (
                 <>
-                  <Button onClick={() => { logout(); setIsOpen(false); }} variant="outline">
+                  <Button onClick={() => { logout(); setIsOpen(false); }} variant="outline" className="nexus-btn-secondary">
                     <LogOut className="h-4 w-4" />
                     <span>Déconnexion</span>
                   </Button>
                 </>
               ) : (
-                <Button asChild variant="outline" onClick={() => setIsOpen(false)}>
+                <Button asChild variant="outline" className="nexus-btn-secondary" onClick={() => setIsOpen(false)}>
                   <Link href="/auth/login">
                     <LogIn className="h-4 w-4" />
                     <span>Connexion</span>
@@ -133,7 +127,7 @@ export function Navbar() {
                 </Button>
               )
             )}
-            <Button asChild className="bg-gradient-to-r from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600" onClick={() => setIsOpen(false)}>
+            <Button asChild className="nexus-gradient text-white" onClick={() => setIsOpen(false)}>
               <Link href="#access">Demander un accès</Link>
             </Button>
           </div>
